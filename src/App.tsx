@@ -1,6 +1,6 @@
-import WelcomePage from "./components/WelcomePage/index.tsx";
+import HomePage from "./components/HomePage/index";
 function App() {
-  return <WelcomePage />;
+  return <HomePage />;
 }
 
 export default App;
