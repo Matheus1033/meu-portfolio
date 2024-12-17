@@ -74,6 +74,8 @@ nav a:hover::after {
   left: 61.5%;
   width: 750px;
   transform: translate(-50%, -50%);
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
 }
 .form {
   width: min(400px, 100%);
