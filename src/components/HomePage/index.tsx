@@ -1,13 +1,14 @@
 import "./style.css";
 import { FaFacebook, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import MyTechnologies from "./MyTechnologies";
+import character from "../../image/character.png";
 
 function HomePage() {
   return (
     <div className="countainer">
       <header className="header">
         <div className="headerCountainer">
-          <h1 className="highlight">Matheus Gomes</h1>
+          <h1 className="highlight">Matheus</h1>
           <nav>
             <input type="checkbox" id="menuHamburguer" />
             <label htmlFor="menuHamburguer">
@@ -32,12 +33,30 @@ function HomePage() {
           </nav>
         </div>
       </header>
+      <section className="about">
+        <div className="aboutCountainer">
+          <div className="myPicture">
+            <img src={character} alt="My character image" />
+          </div>
+          <div className="textAboutMe">
+            <p>
+              My name is Matheus Gomes, I am 17 years old, and I am a front-end
+              developer who enjoys creating websites and user interfaces. I have
+              been practicing and improving my skills by working on personal
+              projects, which provide me with fun and learning with the latest
+              technologies. Currently, I am looking for opportunities to expand
+              my knowledge and experience in full stack development. I believe
+              that my dedication, along with my ability to learn and my skills,
+              will allow me to contribute significantly to the success of the
+              team and the company. I am excited to take on new challenges and
+              learn from excellent professionals.
+            </p>
+          </div>
+        </div>
+      </section>
       <section className="hero">
         <div className="heroCountainer">
-          <div className="technologiesPresentation">
-            <span className="heroText">I work with</span>
-            <span className="animatedHero"></span>
-          </div>
+          <MyTechnologies />
           <div className="cv">
             <ul>
               <li>
@@ -54,28 +73,8 @@ function HomePage() {
           </div>
         </div>
       </section>
-      <section className="About">
-        <div className="aboutCountainer">
-          <div className="myPicture"></div>
-          <div className="textAboutMe">
-            <p>
-              My name is Matheus Gomes, I am 17 years old, and I am a front-end
-              developer who enjoys creating websites and user interfaces. I have
-              been practicing and improving my skills by working on personal
-              projects, which provide me with fun and learning with the latest
-              technologies. Currently, I am looking for opportunities to expand
-              my knowledge and experience in full stack development. I believe
-              that my dedication, along with my ability to learn and my skills,
-              will allow me to contribute significantly to the success of the
-              team and the company. I am excited to take on new challenges and
-              learn from excellent professionals.
-            </p>
-          </div>
-          <MyTechnologies />
-        </div>
-      </section>
       <footer className="footer">
-        <h4 className="highlight">Matheus Gomes</h4>
+        <h4 className="highlight">Matheus</h4>
         <nav>
           <ul>
             <li>
