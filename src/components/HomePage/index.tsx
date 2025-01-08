@@ -1,6 +1,7 @@
 import "./style.css";
 import { FaFacebook, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
-import MyTechnologies from "./MyTechnologies";
+import MyTechnologies from "./HardSkills";
+import ForMyTeam from "./forMyTeam";
 import character from "../../image/character.png";
 
 function HomePage() {
@@ -8,8 +9,8 @@ function HomePage() {
     <div className="countainer">
       <header className="header">
         <div className="headerCountainer">
-          <h1 className="highlight">Matheus</h1>
-          <nav>
+          <h1 className="logo">Matheus</h1>
+          <nav className="navMenu">
             <input type="checkbox" id="menuHamburguer" />
             <label htmlFor="menuHamburguer">
               <div className="menu">
@@ -35,10 +36,10 @@ function HomePage() {
       </header>
       <section className="about">
         <div className="aboutCountainer">
-          <div className="myPicture">
-            <img src={character} alt="My character image" />
-          </div>
           <div className="textAboutMe">
+            <div className="myPicture">
+              <img src={character} alt="My character image" />
+            </div>
             <p>
               My name is Matheus Gomes, I am 17 years old, and I am a front-end
               developer who enjoys creating websites and user interfaces. I have
@@ -52,74 +53,82 @@ function HomePage() {
               learn from excellent professionals.
             </p>
           </div>
-        </div>
-      </section>
-      <section className="hero">
-        <div className="heroCountainer">
-          <MyTechnologies />
           <div className="cv">
-            <ul>
-              <li>
-                <a href="#" className="hireMe">
-                  Hire me
-                </a>
-              </li>
-              <li>
-                <a href="#" className="download" download>
-                  Download CV
-                </a>
-              </li>
-            </ul>
+            <button className="button" data-text="Awesome">
+              <span className="actual-text">&nbsp;HIRE ME&nbsp;</span>
+              <span aria-hidden="true" className="hover-text">
+                &nbsp;HIRE/ME&nbsp;
+              </span>
+            </button>
+            <button className="button" data-text="Awesome">
+              <span className="actual-text">&nbsp;DOWNLOAD CV&nbsp;</span>
+              <span aria-hidden="true" className="hover-text">
+                &nbsp;DOWNLOAD/CV&nbsp;
+              </span>
+            </button>
+          </div>
+          <h1 className="title">My Skills</h1>
+          <div className="mySkills">
+            <div className="softSkill">
+              <h3 className="titleSkills">My soft skills</h3>
+              <ForMyTeam />
+            </div>
+            <div className="hardSkill">
+              <h3 className="titleSkills">My hard skills</h3>
+              <MyTechnologies />
+            </div>
           </div>
         </div>
       </section>
       <footer className="footer">
-        <h4 className="highlight">Matheus</h4>
-        <nav>
-          <ul>
-            <li>
-              <a href="#">Home</a>
-            </li>
-            <li>
-              <a href="#">About</a>
-            </li>
-            <li>
-              <a href="#">Services</a>
-            </li>
-            <li>
-              <a href="#">Contact</a>
-            </li>
-          </ul>
-        </nav>
-        <div className="social">
-          <div className="icon facebook">
-            <a
-              href="https://www.facebook.com/matheusgomesdasilvatavares?locale=pt_BR"
-              target="_black"
-            >
-              <FaFacebook />
-            </a>
-          </div>
-          <div className="icon github">
-            <a href="https://github.com/Matheus1033" target="_black">
-              <FaGithub />
-            </a>
-          </div>
-          <div className="icon instagram">
-            <a
-              href="https://www.instagram.com/matheus_gomes1033"
-              target="_black"
-            >
-              <FaInstagram />
-            </a>
-          </div>
-          <div className="icon linkedin">
-            <a
-              href="https://www.linkedin.com/in/matheus-gomes-a96802253"
-              target="_black"
-            >
-              <FaLinkedin />
-            </a>
+        <div className="footerCountainer">
+          <h4 className="title">Matheus</h4>
+          <nav>
+            <ul>
+              <li>
+                <a href="#">Home</a>
+              </li>
+              <li>
+                <a href="#">About</a>
+              </li>
+              <li>
+                <a href="#">Services</a>
+              </li>
+              <li>
+                <a href="#">Contact</a>
+              </li>
+            </ul>
+          </nav>
+          <div className="social">
+            <div className="icons facebook">
+              <a
+                href="https://www.facebook.com/matheusgomesdasilvatavares?locale=pt_BR"
+                target="_black"
+              >
+                <FaFacebook />
+              </a>
+            </div>
+            <div className="icons github">
+              <a href="https://github.com/Matheus1033" target="_black">
+                <FaGithub />
+              </a>
+            </div>
+            <div className="icons instagram">
+              <a
+                href="https://www.instagram.com/matheus_gomes1033"
+                target="_black"
+              >
+                <FaInstagram />
+              </a>
+            </div>
+            <div className="icons linkedin">
+              <a
+                href="https://www.linkedin.com/in/matheus-gomes-a96802253"
+                target="_black"
+              >
+                <FaLinkedin />
+              </a>
+            </div>
           </div>
         </div>
       </footer>

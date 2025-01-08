@@ -15,18 +15,14 @@
   box-sizing: border-box;
   color: var(--mint-cream);
 }
-body {
+.countainer {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal;
   background-color: var(--space-cadet);
-  display: grid;
-  grid-template-areas:
-    "header header header header"
-    "hero hero hero hero"
-    "about about about about"
-    "footer footer footer footer";
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 a {
   text-decoration: none;
@@ -40,32 +36,30 @@ img {
 }
 /*Header*/
 .header {
-  grid-area: header;
+  flex: 1 1;
 }
-.header .headerCountainer {
+.headerCountainer {
+  padding: 1.25rem 2.125rem;
+  color: var(--mint-cream);
+  margin: 0 auto;
   display: flex;
-  padding: 20px 40px;
   justify-content: space-between;
   align-items: center;
-  min-height: 75px;
-  width: 98vw;
 }
-.header .highlight {
-  font-size: 3rem;
-  font-weight: 700;
-  transition: 0.3s;
+.logo {
+  font-size: 3em;
   font-family: "Agu Display", serif;
 }
-.header nav ul {
+.navMenu ul {
   display: flex;
-}
-.header nav ul li a {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
   font-size: 1.2rem;
-  color: var(--mint-cream);
-  font-weight: 500;
-  padding: 10px 30px;
+  transition: all 0.8s;
 }
-.header nav ul li a:hover {
+.navMenu ul li a:hover {
   color: var(--khaki);
   width: 100px;
   overflow: hidden;
@@ -75,9 +69,10 @@ img {
 }
 .header .menu {
   display: none;
-  width: 60px;
-  height: 60px;
+  width: 3.75rem;
+  height: 3.75rem;
   align-self: flex-end;
+  cursor: pointer;
 }
 .header nav label {
   display: flex;
@@ -87,11 +82,11 @@ img {
   background-color: var(--mint-cream);
   position: relative;
   display: block;
-  width: 30px;
-  height: 2px;
-  top: 29px;
-  left: 15px;
-  transition: 0.5s ease-in-out;
+  width: 1.875rem;
+  height: 0.125rem;
+  top: 3.3rem;
+  left: 0.938rem;
+  transition: 0.3s ease-in-out;
 }
 .header .hamburguer::before,
 .header .hamburguer::after {
@@ -101,13 +96,13 @@ img {
   width: 100%;
   height: 100%;
   position: absolute;
-  transition: 0.2s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 .header .hamburguer::before {
-  top: -10px;
+  top: -0.625rem;
 }
 .header .hamburguer::after {
-  bottom: -10px;
+  bottom: -0.625rem;
 }
 .header input {
   display: none;
@@ -135,50 +130,204 @@ img {
   }
   .header nav {
     position: absolute;
-    top: 8px;
-    right: 20px;
+    top: 0.5rem;
+    right: 1.25rem;
     z-index: 1;
   }
   .header nav ul {
-    width: 200px;
-    background-color: var(--air-superiority-blue);
-    padding: 20px;
+    width: 13rem;
+    background-color: var(--space-cadet);
+    padding: 1.25rem;
   }
   .header nav ul a {
     text-align: center;
-    padding: 20px;
+    padding: 1.25rem;
     display: block;
   }
 }
 /*About*/
 .about {
-  grid-area: about;
+  flex: 1 1 100vw;
 }
 .aboutCountainer {
-  width: 100%;
-  height: 60vh;
   display: flex;
-  align-items: center;
-  gap: 20px;
-}
-.myPicture {
-  width: 400px;
-  height: 400px;
-}
-.myPicture img {
-  border-radius: 50px;
+  flex-direction: column;
 }
 .textAboutMe {
-  width: 70%;
-  font-size: 20px;
-  line-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+.textAboutMe p {
+  width: 70vw;
+  font-size: 1.2rem;
+  line-height: 2.5rem;
   text-align: justify;
+  text-indent: 2.5rem;
 }
-/*Hero*/
-.hero {
-  grid-area: hero;
+.myPicture {
+  width: 300px;
+  height: 300px;
 }
-/*Footer*/
+.myPicture img {
+  border-radius: 20px;
+}
+.cv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  padding: 30px;
+}
+.button {
+  margin: 0;
+  height: auto;
+  background: transparent;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
+.button {
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--mint-cream);
+}
+.hover-text {
+  position: absolute;
+  box-sizing: border-box;
+  content: attr(data-text);
+  color: var(--khaki);
+  width: 0%;
+  inset: 0;
+  border-right: 2px solid var(--khaki);
+  overflow: hidden;
+  transition: 0.5s;
+  -webkit-text-stroke: 1px var(--khaki);
+}
+.button:hover .hover-text {
+  width: 99%;
+  filter: drop-shadow(0 0 23px var(--khaki));
+}
+.title {
+  display: flex;
+  justify-content: center;
+  font-size: 3rem;
+  font-family: "Agu Display", serif;
+}
+.mySkills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  flex: 1 1 100vw;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+.titleSkills {
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  font-family: "Agu Display", serif;
+  padding-bottom: 1.5rem;
+}
+.forMyTeam,
+.myTechnologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+  border: 2px solid var(--mint-cream);
+  border-radius: 20px;
+  gap: 1rem;
+}
+.item p {
+  font-size: 0.9rem;
+}
+.icon {
+  font-size: 3rem;
+}
+.item:hover {
+  color: var(--khaki);
+  border: 2px solid var(--khaki);
+  background-color: var(--khaki);
+  overflow: hidden;
+  white-space: nowrap;
+  filter: drop-shadow(0 0 15px var(--khaki)) drop-shadow(0 0 25px var(--khaki));
+  transition: 0.3s;
+}
 .footer {
-  grid-area: footer;
+  flex: 1 1;
+}
+.footerCountainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  height: 400px;
+  justify-content: space-evenly;
+}
+.footerCountainer nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  font-size: 1.2rem;
+  transition: all 0.8s;
+  flex-wrap: wrap;
+}
+.footerCountainer nav ul li a:hover {
+  color: var(--khaki);
+  width: 100px;
+  overflow: hidden;
+  white-space: nowrap;
+  filter: drop-shadow(0 0 15px var(--khaki)) drop-shadow(0 0 25px var(--khaki));
+  transition: 0.5s;
+}
+.social {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+.icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  width: 60px;
+  height: 60px;
+  border: 2px solid var(--mint-cream);
+  border-radius: 20px;
+  padding-top: 10px;
+  transition: ease-in-out 0.5s;
+}
+.facebook:hover {
+  background-color: #1877f2;
+  border-color: #1877f2;
+}
+.github:hover {
+  background-color: #181717;
+  border-color: #181717;
+}
+.instagram:hover {
+  background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4);
+  border: none;
+}
+.linkedin:hover {
+  background-color: #0a66c2;
+  border-color: #0a66c2;
 }
