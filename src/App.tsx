@@ -1,8 +1,10 @@
-import ContactPage from "./components/ContactPage";
-import WelcomePage from "./components/WelcomePage";
-import HomePage from "./components/HomePage";
+import AppRoutes from "./routes";
 function App() {
-  return <ContactPage />;
+  return (
+    <>
+      <AppRoutes />;
+    </>
+  );
 }
 
 export default App;
