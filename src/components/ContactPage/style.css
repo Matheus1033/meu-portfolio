@@ -1,0 +1,285 @@
+@import url("https://fonts.googleapis.com/css2?family=Agu+Display&family=Poppins:wght@400;500;700&display=swap");
+:root {
+  --space-cadet: #283044;
+  --air-superiority-blue: #78a1bb;
+  --mint-cream: #ebf5ee;
+  --khaki: #bfa89e;
+  --cinereuos: #8b786d;
+}
+/*Reset*/
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  color: var(--mint-cream);
+}
+.countainer {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background-color: var(--space-cadet);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+ul {
+  list-style: none;
+}
+/*Header*/
+.header {
+  flex: 1 1;
+}
+.headerCountainer {
+  color: var(--mint-cream);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+ul {
+  z-index: 99;
+  position: absolute;
+  right: 30px;
+}
+.navMenu a {
+  position: relative;
+}
+.logo {
+  font-size: 3em;
+  font-family: "Agu Display", serif;
+  padding-left: 1.3rem;
+}
+.navMenu ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  font-size: 1.2rem;
+  transition: all 0.8s;
+}
+.navMenu ul li a:hover {
+  color: var(--khaki);
+  width: 100px;
+  overflow: hidden;
+  white-space: nowrap;
+  filter: drop-shadow(0 0 15px var(--khaki)) drop-shadow(0 0 25px var(--khaki));
+  transition: 0.5s;
+}
+.header .menu {
+  display: none;
+  width: 3.75rem;
+  height: 3.75rem;
+  align-self: flex-end;
+  cursor: pointer;
+}
+.header nav label {
+  display: flex;
+  flex-direction: column;
+}
+.header .hamburguer {
+  background-color: var(--mint-cream);
+  position: relative;
+  display: block;
+  width: 1.875rem;
+  height: 0.125rem;
+  top: 2.5rem;
+  left: 0.938rem;
+  transition: 0.3s ease-in-out;
+  z-index: 100;
+}
+.header .hamburguer::before,
+.header .hamburguer::after {
+  background-color: var(--mint-cream);
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: 0.3s ease-in-out;
+}
+.header .hamburguer::before {
+  top: -0.625rem;
+}
+.header .hamburguer::after {
+  bottom: -0.625rem;
+}
+.header input {
+  display: none;
+}
+.header input:checked ~ label .hamburguer {
+  transform: rotate(45deg);
+}
+.header input:checked ~ label .hamburguer::before {
+  transform: rotate(90deg);
+  top: 0;
+}
+.header input:checked ~ label .hamburguer::after {
+  transform: rotate(90deg);
+  bottom: 0;
+}
+@media (max-width: 900px) {
+  .header .menu {
+    display: block;
+  }
+  .header nav ul {
+    display: none;
+  }
+  .header input:checked ~ ul {
+    display: block;
+  }
+  .header nav {
+    position: absolute;
+    top: 0.3rem;
+    right: 1.25rem;
+    z-index: 100;
+  }
+  .header nav ul {
+    width: 13rem;
+    background-color: var(--space-cadet);
+    padding: 1.25rem;
+  }
+  .header nav ul a {
+    text-align: center;
+    padding: 1.25rem;
+    display: block;
+  }
+}
+.contact {
+  flex: 1 1 42vw;
+}
+.contactCountainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  z-index: 100;
+}
+.contactCountainer h2 {
+  font-size: 2rem;
+}
+.contactCountainer p {
+  font-size: 1.2rem;
+}
+.contactCountainer form {
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+}
+form label {
+  color: #f5f5f5;
+  font-size: 1.1rem;
+}
+form input {
+  padding: 0.8rem;
+  outline: none;
+  border: 0;
+  margin-bottom: 10px;
+  font-size: 0.8rem;
+  transition: all 0.5s;
+}
+form input:focus {
+  border-radius: 2rem;
+}
+form textarea {
+  padding: 10px;
+  outline: none;
+  border: 0;
+  font-size: 0.8rem;
+  margin-bottom: 15px;
+  transition: all 0.5s;
+}
+form textarea:focus {
+  border-radius: 16px;
+}
+form button {
+  padding: 15px;
+  cursor: pointer;
+  font-size: 1rem;
+  background: transparent;
+  border: 2px solid #f5f5f5;
+  color: #f5f5f5;
+  transition: all 1s;
+}
+form button:hover {
+  background-color: #f5f5f5;
+  color: #101026;
+  border-radius: 16px;
+}
+@media (max-width: 1024px) {
+  .contact {
+    flex: 1 1 80vw;
+  }
+}
+@media (max-width: 425px) {
+  .contact {
+    flex: 1 1 125vw;
+  }
+}
+footer {
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  overflow: hidden;
+}
+.line {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.line1 {
+  z-index: 15;
+  opacity: 0.5;
+}
+.line2 {
+  z-index: 10;
+  opacity: 0.7;
+}
+.line3 {
+  z-index: 5;
+}
+.wave {
+  position: absolute;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background-repeat: repeat no-repeat;
+  background-position: 0 bottom;
+  transform-origin: center bottom;
+}
+.wave1 {
+  background-image: url(../../assets/waves/wave1.png);
+  background-size: 50% 80px;
+  animation: waves 8s linear infinite;
+}
+.wave2 {
+  background-image: url(../../assets/waves/wave2.png);
+  background-size: 50% 80px;
+  animation: waves 12s linear infinite;
+}
+.wave3 {
+  background-image: url(../../assets/waves/wave3.png);
+  background-size: 50% 80px;
+  animation: waves 18s linear infinite;
+}
+@keyframes waves {
+  0% {
+    transform: translateX(0) translateZ(0) scaleY(1);
+  }
+  50% {
+    transform: translateX(-25%) translateZ(0) scaleY(0.5);
+  }
+  100% {
+    transform: translateX(-50%) translateZ(0) scaleY(1);
+  }
+}
